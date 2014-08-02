@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6157" systemVersion="14A237a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6157"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6185.7"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="iTunesTagEditor2" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -669,12 +669,453 @@
         <window title="iTunesTagEditor2" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="contentRect" x="335" y="390" width="640" height="480"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+            <value key="minSize" type="size" width="480" height="360"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Hg-fN-9U4">
+                        <rect key="frame" x="14" y="23" width="105" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="HzK-hf-DFE"/>
+                            <constraint firstAttribute="width" constant="93" id="bDx-v1-ZJa"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="前へ" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Vbw-IM-sfM">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="AquaKana"/>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnB-bk-S18">
+                        <rect key="frame" x="119" y="23" width="105" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="93" id="3nU-pu-Qdl"/>
+                            <constraint firstAttribute="height" constant="21" id="jfA-qN-4TB"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="次へ" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="24l-LB-G1B">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="AquaKana"/>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wo3-zR-sNk">
+                        <rect key="frame" x="408" y="23" width="105" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="93" id="92G-ec-cUc"/>
+                            <constraint firstAttribute="height" constant="21" id="GFm-KC-bkY"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="キャンセル" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bPi-Sh-uKm">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="AquaKana"/>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6l5-fD-Vah">
+                        <rect key="frame" x="513" y="23" width="105" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="0kt-OZ-tw8"/>
+                            <constraint firstAttribute="width" constant="93" id="9dJ-45-ax2"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="D1J-aP-8go">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="13" name="AquaKana"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                    </button>
+                    <tabView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-sK-Hp4">
+                        <rect key="frame" x="13" y="51" width="606" height="423"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="概要" identifier="1" id="nf2-qN-wjf">
+                                <view key="view" id="vaC-QE-wpm">
+                                    <rect key="frame" x="10" y="33" width="434" height="267"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="情報" identifier="2" id="2G0-Fh-ENP">
+                                <view key="view" id="onr-3t-Cie">
+                                    <rect key="frame" x="10" y="33" width="594" height="377"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BvL-1D-IhU">
+                                            <rect key="frame" x="15" y="360" width="26" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="名前" id="9VL-cO-SOO">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6j-iL-dqV" userLabel="名前 Text Field">
+                                            <rect key="frame" x="17" y="338" width="552" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="R6w-nU-6TF"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="2wW-Mb-JxZ">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ivG-c1-Zw5">
+                                            <rect key="frame" x="15" y="321" width="70" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="アーティスト" id="Fu9-AV-LUU">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hjU-Gs-ICp" userLabel="アーティスト Text Field">
+                                            <rect key="frame" x="17" y="299" width="442" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="sFM-cW-rGC"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="PYK-Bd-omO">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yhj-ix-eMh">
+                                            <rect key="frame" x="15" y="282" width="114" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="アルバムアーティスト" id="fx8-YA-6IU">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9z7-z3-ymS" userLabel="アルバムアーティスト Text Field">
+                                            <rect key="frame" x="17" y="260" width="442" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="bgy-iL-Mli"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="mnP-zU-zAS">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olc-89-t3B">
+                                            <rect key="frame" x="15" y="243" width="48" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="アルバム" id="X71-VS-6dH">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k45-Aa-dTK">
+                                            <rect key="frame" x="17" y="221" width="442" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="jaG-7F-nTx"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="EHa-aO-esC">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewv-CU-SAf">
+                                            <rect key="frame" x="15" y="204" width="48" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="グループ" id="reL-ex-7wy">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7z-kD-haK">
+                                            <rect key="frame" x="17" y="182" width="442" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="xak-7x-HgG"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="BSp-eU-Kg2">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="88e-8a-ugY">
+                                            <rect key="frame" x="15" y="165" width="37" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="作曲者" id="uGg-vT-NK2">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IIH-iq-UTf">
+                                            <rect key="frame" x="17" y="143" width="552" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="mtt-uB-Uin"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="pOx-2G-GJE">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6sf-mS-lla">
+                                            <rect key="frame" x="15" y="126" width="48" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="コメント" id="lmk-w0-bvs">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FAb-jX-Ttw">
+                                            <rect key="frame" x="15" y="40" width="48" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ジャンル" id="4hQ-P4-G1i">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <comboBox verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24y-fM-2Bh">
+                                            <rect key="frame" x="17" y="16" width="300" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="N8j-S2-GzE"/>
+                                            </constraints>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="75s-Xq-opX">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>Item 1</string>
+                                                    <string>Item 2</string>
+                                                    <string>Item 3</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                        </comboBox>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OwG-6i-7cy">
+                                            <rect key="frame" x="467" y="321" width="15" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="年" id="4pR-uu-knB">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJk-xv-MgD" userLabel="年 Text Field">
+                                            <rect key="frame" x="469" y="299" width="100" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="7f2-1D-2RV"/>
+                                                <constraint firstAttribute="height" constant="22" id="7lZ-iv-62u"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="tzN-QA-CnR">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NdO-tD-3dE">
+                                            <rect key="frame" x="467" y="282" width="70" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="トラック番号" id="2wU-kd-0Y7">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YNU-36-KUe">
+                                            <rect key="frame" x="469" y="260" width="40" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="NK6-p2-Qj9"/>
+                                                <constraint firstAttribute="width" constant="40" id="Soe-sc-SkU"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="o5B-Hl-wWE">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="emW-BL-mn4">
+                                            <rect key="frame" x="514" y="264" width="10" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/" id="3vy-sg-xQs">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcI-r7-lkV">
+                                            <rect key="frame" x="529" y="260" width="40" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="2Yf-VD-LnE"/>
+                                                <constraint firstAttribute="height" constant="22" id="udU-XV-vqD"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="5B3-dz-kdQ">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nU8-K6-9kb">
+                                            <rect key="frame" x="467" y="243" width="70" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="ディスク番号" id="rQv-3r-ObE">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Llt-dO-6nT">
+                                            <rect key="frame" x="469" y="221" width="40" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="9Ss-wB-Udn"/>
+                                                <constraint firstAttribute="height" constant="22" id="dU9-06-Xmb"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="L83-AV-eT8">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udP-4V-Uqv">
+                                            <rect key="frame" x="514" y="225" width="10" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="/" id="fCK-81-Uqz">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBx-AI-p3W">
+                                            <rect key="frame" x="529" y="221" width="40" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="4hO-Sk-uru"/>
+                                                <constraint firstAttribute="height" constant="22" id="5oW-FE-qu3"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="174-zt-1Gd">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iis-EJ-Kbg">
+                                            <rect key="frame" x="467" y="204" width="30" height="14"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="BPM" id="Nxg-jz-MvG">
+                                                <font key="font" size="11" name="AquaKana"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vs5-fD-7yF">
+                                            <rect key="frame" x="469" y="182" width="100" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="uQ8-er-6Vz"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="AZZ-jp-JpU">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nuH-1L-Fbq">
+                                            <rect key="frame" x="342" y="21" width="165" height="18"/>
+                                            <buttonCell key="cell" type="check" title="コンピレーションの一部" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="mWR-LO-3P5">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" size="13" name="AquaKana"/>
+                                            </buttonCell>
+                                        </button>
+                                        <textField misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6t3-wc-E7z">
+                                            <rect key="frame" x="17" y="57" width="552" height="66"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="YGd-av-txc"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="cYz-l2-nSy">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="K6j-iL-dqV" firstAttribute="top" secondItem="BvL-1D-IhU" secondAttribute="bottom" id="06b-6V-BDt"/>
+                                        <constraint firstItem="YNU-36-KUe" firstAttribute="leading" secondItem="nU8-K6-9kb" secondAttribute="leading" id="20L-xF-aqq"/>
+                                        <constraint firstAttribute="bottom" secondItem="24y-fM-2Bh" secondAttribute="bottom" constant="20" id="3uu-d5-Pxe"/>
+                                        <constraint firstItem="88e-8a-ugY" firstAttribute="leading" secondItem="h7z-kD-haK" secondAttribute="leading" id="5jI-fg-UKA"/>
+                                        <constraint firstItem="emW-BL-mn4" firstAttribute="leading" secondItem="YNU-36-KUe" secondAttribute="trailing" constant="7" id="7Ci-fG-MCi"/>
+                                        <constraint firstItem="YNU-36-KUe" firstAttribute="leading" secondItem="NdO-tD-3dE" secondAttribute="leading" id="8vz-Ab-CfX"/>
+                                        <constraint firstItem="xBx-AI-p3W" firstAttribute="trailing" secondItem="vs5-fD-7yF" secondAttribute="trailing" id="95y-Mu-vNE"/>
+                                        <constraint firstItem="olc-89-t3B" firstAttribute="leading" secondItem="k45-Aa-dTK" secondAttribute="leading" id="BUQ-lp-PLl"/>
+                                        <constraint firstItem="YNU-36-KUe" firstAttribute="top" secondItem="NdO-tD-3dE" secondAttribute="bottom" id="BgB-2M-NW9"/>
+                                        <constraint firstItem="gcI-r7-lkV" firstAttribute="top" secondItem="NdO-tD-3dE" secondAttribute="bottom" id="C9l-Wi-KVD"/>
+                                        <constraint firstItem="h7z-kD-haK" firstAttribute="top" secondItem="ewv-CU-SAf" secondAttribute="bottom" id="DU6-G7-0nj"/>
+                                        <constraint firstItem="88e-8a-ugY" firstAttribute="top" secondItem="h7z-kD-haK" secondAttribute="bottom" constant="3" id="EYs-GY-K4x"/>
+                                        <constraint firstItem="Yhj-ix-eMh" firstAttribute="leading" secondItem="9z7-z3-ymS" secondAttribute="leading" id="F73-TS-SyI"/>
+                                        <constraint firstItem="IIH-iq-UTf" firstAttribute="leading" secondItem="88e-8a-ugY" secondAttribute="leading" id="Fkg-7d-Rct"/>
+                                        <constraint firstItem="xBx-AI-p3W" firstAttribute="top" secondItem="nU8-K6-9kb" secondAttribute="bottom" id="GPk-ON-97i"/>
+                                        <constraint firstItem="QJk-xv-MgD" firstAttribute="leading" secondItem="NdO-tD-3dE" secondAttribute="leading" id="HVj-g3-qCD"/>
+                                        <constraint firstItem="vs5-fD-7yF" firstAttribute="leading" secondItem="h7z-kD-haK" secondAttribute="trailing" constant="10" id="IQB-EJ-bvb"/>
+                                        <constraint firstItem="Llt-dO-6nT" firstAttribute="top" secondItem="nU8-K6-9kb" secondAttribute="bottom" id="Ifg-fW-wIZ"/>
+                                        <constraint firstItem="OwG-6i-7cy" firstAttribute="top" secondItem="K6j-iL-dqV" secondAttribute="bottom" constant="3" id="KNv-l9-6Um"/>
+                                        <constraint firstItem="ivG-c1-Zw5" firstAttribute="top" secondItem="K6j-iL-dqV" secondAttribute="bottom" constant="3" id="LBM-yV-Qs8"/>
+                                        <constraint firstItem="QJk-xv-MgD" firstAttribute="top" secondItem="OwG-6i-7cy" secondAttribute="bottom" id="Lhd-wk-f1P"/>
+                                        <constraint firstItem="IIH-iq-UTf" firstAttribute="top" secondItem="88e-8a-ugY" secondAttribute="bottom" id="Mf7-vY-WtT"/>
+                                        <constraint firstItem="nuH-1L-Fbq" firstAttribute="centerY" secondItem="24y-fM-2Bh" secondAttribute="centerY" id="Mob-uN-k8r"/>
+                                        <constraint firstItem="iis-EJ-Kbg" firstAttribute="top" secondItem="Llt-dO-6nT" secondAttribute="bottom" constant="3" id="N24-ih-BQ7"/>
+                                        <constraint firstItem="QJk-xv-MgD" firstAttribute="leading" secondItem="hjU-Gs-ICp" secondAttribute="trailing" constant="10" id="NsT-Z4-1kl"/>
+                                        <constraint firstItem="vs5-fD-7yF" firstAttribute="top" secondItem="iis-EJ-Kbg" secondAttribute="bottom" id="O3s-If-899"/>
+                                        <constraint firstItem="IIH-iq-UTf" firstAttribute="trailing" secondItem="6t3-wc-E7z" secondAttribute="trailing" id="O5y-85-sUn"/>
+                                        <constraint firstItem="nU8-K6-9kb" firstAttribute="leading" secondItem="Llt-dO-6nT" secondAttribute="leading" id="On7-kv-TXB"/>
+                                        <constraint firstItem="6sf-mS-lla" firstAttribute="leading" secondItem="6t3-wc-E7z" secondAttribute="leading" id="Oxw-vd-AVi"/>
+                                        <constraint firstItem="ivG-c1-Zw5" firstAttribute="leading" secondItem="K6j-iL-dqV" secondAttribute="leading" id="Q82-PY-vtU"/>
+                                        <constraint firstItem="6t3-wc-E7z" firstAttribute="top" secondItem="6sf-mS-lla" secondAttribute="bottom" id="Qrf-0E-hMn"/>
+                                        <constraint firstItem="9z7-z3-ymS" firstAttribute="top" secondItem="Yhj-ix-eMh" secondAttribute="bottom" id="RCg-ij-pDf"/>
+                                        <constraint firstAttribute="trailing" secondItem="K6j-iL-dqV" secondAttribute="trailing" constant="17" id="Rac-h7-8T4"/>
+                                        <constraint firstItem="OwG-6i-7cy" firstAttribute="leading" secondItem="QJk-xv-MgD" secondAttribute="leading" id="SSq-vd-jkS"/>
+                                        <constraint firstItem="iis-EJ-Kbg" firstAttribute="leading" secondItem="Llt-dO-6nT" secondAttribute="leading" id="SZ9-h3-CgZ"/>
+                                        <constraint firstItem="udP-4V-Uqv" firstAttribute="leading" secondItem="Llt-dO-6nT" secondAttribute="trailing" constant="7" id="TP2-E5-VQA"/>
+                                        <constraint firstItem="xBx-AI-p3W" firstAttribute="trailing" secondItem="gcI-r7-lkV" secondAttribute="trailing" id="Tdm-tB-0j3"/>
+                                        <constraint firstItem="olc-89-t3B" firstAttribute="top" secondItem="9z7-z3-ymS" secondAttribute="bottom" constant="3" id="U8f-Sc-str"/>
+                                        <constraint firstItem="BvL-1D-IhU" firstAttribute="leading" secondItem="onr-3t-Cie" secondAttribute="leading" constant="17" id="WAf-bQ-cML"/>
+                                        <constraint firstAttribute="trailing" secondItem="nuH-1L-Fbq" secondAttribute="trailing" constant="81" id="XQs-85-NgW"/>
+                                        <constraint firstItem="NdO-tD-3dE" firstAttribute="top" secondItem="QJk-xv-MgD" secondAttribute="bottom" constant="3" id="ZWe-9o-dz1"/>
+                                        <constraint firstItem="YNU-36-KUe" firstAttribute="leading" secondItem="9z7-z3-ymS" secondAttribute="trailing" constant="10" id="cZ6-34-IyR"/>
+                                        <constraint firstItem="IIH-iq-UTf" firstAttribute="leading" secondItem="6sf-mS-lla" secondAttribute="leading" id="csi-Do-qnu"/>
+                                        <constraint firstItem="hjU-Gs-ICp" firstAttribute="top" secondItem="ivG-c1-Zw5" secondAttribute="bottom" id="dp3-Pd-bTJ"/>
+                                        <constraint firstItem="hjU-Gs-ICp" firstAttribute="leading" secondItem="Yhj-ix-eMh" secondAttribute="leading" id="eGY-gP-aPs"/>
+                                        <constraint firstItem="BvL-1D-IhU" firstAttribute="leading" secondItem="K6j-iL-dqV" secondAttribute="leading" id="efv-Ae-7Vb"/>
+                                        <constraint firstItem="Llt-dO-6nT" firstAttribute="centerY" secondItem="udP-4V-Uqv" secondAttribute="centerY" id="epm-AT-Tp7"/>
+                                        <constraint firstItem="ewv-CU-SAf" firstAttribute="leading" secondItem="k45-Aa-dTK" secondAttribute="leading" id="fmz-f9-UVq"/>
+                                        <constraint firstItem="24y-fM-2Bh" firstAttribute="top" secondItem="FAb-jX-Ttw" secondAttribute="bottom" id="gYa-gl-gzh"/>
+                                        <constraint firstItem="Llt-dO-6nT" firstAttribute="leading" secondItem="k45-Aa-dTK" secondAttribute="trailing" constant="10" id="ggv-bG-wJe"/>
+                                        <constraint firstItem="6sf-mS-lla" firstAttribute="top" secondItem="IIH-iq-UTf" secondAttribute="bottom" constant="3" id="iHe-Hb-XKv"/>
+                                        <constraint firstItem="ewv-CU-SAf" firstAttribute="leading" secondItem="h7z-kD-haK" secondAttribute="leading" id="iyr-5g-xga"/>
+                                        <constraint firstItem="iis-EJ-Kbg" firstAttribute="leading" secondItem="vs5-fD-7yF" secondAttribute="leading" id="jwx-Oq-uh4"/>
+                                        <constraint firstItem="FAb-jX-Ttw" firstAttribute="leading" secondItem="6t3-wc-E7z" secondAttribute="leading" id="kQB-HA-bsL"/>
+                                        <constraint firstItem="FAb-jX-Ttw" firstAttribute="leading" secondItem="24y-fM-2Bh" secondAttribute="leading" id="ko5-6t-C7e"/>
+                                        <constraint firstItem="olc-89-t3B" firstAttribute="leading" secondItem="9z7-z3-ymS" secondAttribute="leading" id="kqK-WY-dfP"/>
+                                        <constraint firstItem="FAb-jX-Ttw" firstAttribute="top" secondItem="6t3-wc-E7z" secondAttribute="bottom" constant="3" id="lMJ-1t-BGk"/>
+                                        <constraint firstItem="nuH-1L-Fbq" firstAttribute="leading" secondItem="24y-fM-2Bh" secondAttribute="trailing" constant="30" id="m0q-Qm-Wmc"/>
+                                        <constraint firstItem="Yhj-ix-eMh" firstAttribute="top" secondItem="hjU-Gs-ICp" secondAttribute="bottom" constant="3" id="oMe-Sp-7CA"/>
+                                        <constraint firstItem="nU8-K6-9kb" firstAttribute="top" secondItem="gcI-r7-lkV" secondAttribute="bottom" constant="3" id="rPp-nM-1mU"/>
+                                        <constraint firstItem="k45-Aa-dTK" firstAttribute="top" secondItem="olc-89-t3B" secondAttribute="bottom" id="tHb-e7-5n8"/>
+                                        <constraint firstItem="ivG-c1-Zw5" firstAttribute="leading" secondItem="hjU-Gs-ICp" secondAttribute="leading" id="v1p-3e-N2x"/>
+                                        <constraint firstItem="QJk-xv-MgD" firstAttribute="trailing" secondItem="gcI-r7-lkV" secondAttribute="trailing" id="wOW-tU-WCp"/>
+                                        <constraint firstItem="YNU-36-KUe" firstAttribute="centerY" secondItem="emW-BL-mn4" secondAttribute="centerY" id="wtJ-A4-eYF"/>
+                                        <constraint firstItem="BvL-1D-IhU" firstAttribute="top" secondItem="onr-3t-Cie" secondAttribute="top" constant="3" id="xFi-jo-uh1"/>
+                                        <constraint firstItem="K6j-iL-dqV" firstAttribute="trailing" secondItem="QJk-xv-MgD" secondAttribute="trailing" id="xPf-ZW-wLP"/>
+                                        <constraint firstItem="ewv-CU-SAf" firstAttribute="top" secondItem="k45-Aa-dTK" secondAttribute="bottom" constant="3" id="xSU-la-jQ8"/>
+                                        <constraint firstItem="IIH-iq-UTf" firstAttribute="trailing" secondItem="vs5-fD-7yF" secondAttribute="trailing" id="yiA-Q2-s1e"/>
+                                    </constraints>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8Hg-fN-9U4" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="9Os-YW-82Y"/>
+                    <constraint firstAttribute="trailing" secondItem="cMC-sK-Hp4" secondAttribute="trailing" constant="20" id="BEL-Pg-eVY"/>
+                    <constraint firstItem="8Hg-fN-9U4" firstAttribute="leading" secondItem="cMC-sK-Hp4" secondAttribute="leading" id="CbR-xX-ggz"/>
+                    <constraint firstItem="cMC-sK-Hp4" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="12" id="UAS-O3-XoB"/>
+                    <constraint firstAttribute="bottom" secondItem="8Hg-fN-9U4" secondAttribute="bottom" constant="20" id="UIj-Z4-jN9"/>
+                    <constraint firstItem="wnB-bk-S18" firstAttribute="centerY" secondItem="8Hg-fN-9U4" secondAttribute="centerY" id="VPB-9k-RQh"/>
+                    <constraint firstAttribute="bottom" secondItem="6l5-fD-Vah" secondAttribute="bottom" constant="20" id="VZn-GZ-Z7P"/>
+                    <constraint firstItem="wnB-bk-S18" firstAttribute="leading" secondItem="8Hg-fN-9U4" secondAttribute="trailing" constant="12" id="Wsh-So-HsK"/>
+                    <constraint firstItem="6l5-fD-Vah" firstAttribute="top" secondItem="cMC-sK-Hp4" secondAttribute="bottom" constant="10" id="YRy-Va-wj7"/>
+                    <constraint firstItem="wo3-zR-sNk" firstAttribute="centerY" secondItem="6l5-fD-Vah" secondAttribute="centerY" id="bV8-aN-rU5"/>
+                    <constraint firstItem="wnB-bk-S18" firstAttribute="centerY" secondItem="wo3-zR-sNk" secondAttribute="centerY" id="ncu-Dp-jpr"/>
+                    <constraint firstItem="6l5-fD-Vah" firstAttribute="leading" secondItem="wo3-zR-sNk" secondAttribute="trailing" constant="12" id="pKJ-9d-6iQ"/>
+                    <constraint firstItem="cMC-sK-Hp4" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="tTV-lU-w2J"/>
+                    <constraint firstItem="cMC-sK-Hp4" firstAttribute="trailing" secondItem="6l5-fD-Vah" secondAttribute="trailing" id="uEw-vR-T4N"/>
+                    <constraint firstAttribute="trailing" secondItem="6l5-fD-Vah" secondAttribute="trailing" constant="20" id="zqD-LU-e0q"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="129" y="358.5"/>
         </window>
     </objects>
 </document>
