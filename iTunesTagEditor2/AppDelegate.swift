@@ -11,6 +11,21 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet var window: NSWindow
+    @IBOutlet var txtName: NSTextField
+    @IBOutlet var txtArtist: NSTextField
+    @IBOutlet var txtAlbumArtist: NSTextField
+    @IBOutlet var txtAlbum: NSTextField
+    @IBOutlet var txtGroup: NSTextField
+    @IBOutlet var txtComposer: NSTextField
+    @IBOutlet var txtComment: NSTextField
+    @IBOutlet var comboGenre: NSComboBox
+    @IBOutlet var txtYear: NSTextField
+    @IBOutlet var txtTrackno: NSTextField
+    @IBOutlet var txtTrackno2: NSTextField
+    @IBOutlet var txtDiscno: NSTextField
+    @IBOutlet var txtDiscno2: NSTextField
+    @IBOutlet var txtBPM: NSTextField
+    @IBOutlet var chkbxCompilation: NSButton
     
     
     func applicationDidFinishLaunching(aNotification: NSNotification?) {

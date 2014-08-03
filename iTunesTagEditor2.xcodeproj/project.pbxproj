@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1AC9E6198DF74D003CE6AD /* iTunesTagEditor2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AC9E5198DF74D003CE6AD /* iTunesTagEditor2.swift */; };
+		2A1AC9E8198DF76D003CE6AD /* iTunesTagEditor2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AC9E7198DF76D003CE6AD /* iTunesTagEditor2Controller.swift */; };
+		2A1AC9EA198DF77E003CE6AD /* iTunesTagEditor2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AC9E9198DF77E003CE6AD /* iTunesTagEditor2View.swift */; };
 		2AEA082C198D1DB300DE5752 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA082B198D1DB300DE5752 /* main.swift */; };
 		2AEA082E198D1DB300DE5752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEA082D198D1DB300DE5752 /* AppDelegate.swift */; };
 		2AEA0830198D1DB300DE5752 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEA082F198D1DB300DE5752 /* Images.xcassets */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A1AC9E5198DF74D003CE6AD /* iTunesTagEditor2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesTagEditor2.swift; sourceTree = "<group>"; };
+		2A1AC9E7198DF76D003CE6AD /* iTunesTagEditor2Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesTagEditor2Controller.swift; sourceTree = "<group>"; };
+		2A1AC9E9198DF77E003CE6AD /* iTunesTagEditor2View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesTagEditor2View.swift; sourceTree = "<group>"; };
 		2AEA0826198D1DB300DE5752 /* iTunesTagEditor2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesTagEditor2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEA082A198D1DB300DE5752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AEA082B198D1DB300DE5752 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -81,6 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				2AEA082D198D1DB300DE5752 /* AppDelegate.swift */,
+				2A1AC9E5198DF74D003CE6AD /* iTunesTagEditor2.swift */,
+				2A1AC9E9198DF77E003CE6AD /* iTunesTagEditor2View.swift */,
+				2A1AC9E7198DF76D003CE6AD /* iTunesTagEditor2Controller.swift */,
 				2AEA082F198D1DB300DE5752 /* Images.xcassets */,
 				2AEA0831198D1DB300DE5752 /* MainMenu.xib */,
 				2AEA0829198D1DB300DE5752 /* Supporting Files */,
@@ -214,8 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1AC9E8198DF76D003CE6AD /* iTunesTagEditor2Controller.swift in Sources */,
+				2A1AC9EA198DF77E003CE6AD /* iTunesTagEditor2View.swift in Sources */,
 				2AEA082E198D1DB300DE5752 /* AppDelegate.swift in Sources */,
 				2AEA082C198D1DB300DE5752 /* main.swift in Sources */,
+				2A1AC9E6198DF74D003CE6AD /* iTunesTagEditor2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +425,7 @@
 				2AEA0844198D1DB400DE5752 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AEA0845198D1DB400DE5752 /* Build configuration list for PBXNativeTarget "iTunesTagEditor2Tests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +434,7 @@
 				2AEA0847198D1DB400DE5752 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
